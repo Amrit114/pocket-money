@@ -228,13 +228,12 @@ This project is licensed under the **MIT License** - see the [LICENSE.md](LICENS
 
 ### 🌟 **Made with ❤️ by Amrit Kumar & PocketMoney Team**
 
-```
- ____            _        _   __  __                        
+```____            _        _   __  __                        
 |  _ \ ___   ___| | _____| |_|  \/  | ___  _ __   ___ _   _ 
 | |_) / _ \ / __| |/ / _ \ __| |\/| |/ _ \| '_ \ / _ \ | | |
 |  __/ (_) | (__|   <  __/ |_| |  | | (_) | | | |  __/ |_| |
 |_|   \___/ \___|_|\_\___|\__|_|  |_|\___/|_| |_|\___|\__, |
-																	  |___/ 
+                                                     |___/
 ```
 
 **🚀 Empowering Financial Freedom, One Transaction at a Time**
