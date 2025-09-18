@@ -226,7 +226,7 @@ This project is licensed under the **MIT License** - see the [LICENSE.md](LICENS
 
 ---
 
-### 🌟 **Made with ❤️ by Amrit Kumar & PocketMoney Team**
+### 🌟 **Made with ❤️ by Amrit Raj Singh**
 
 ```____            _        _   __  __                        
 |  _ \ ___   ___| | _____| |_|  \/  | ___  _ __   ___ _   _ 
