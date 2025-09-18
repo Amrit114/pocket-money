@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PocketMoney - Sign Up</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Base styles and background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Glassmorphism container with improved aesthetics */
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 380px; /* Slightly wider for better spacing */
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      animation: fadeIn 1s ease-in-out;
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .container:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .container h2 {
+      margin-bottom: 25px;
+      font-size: 2rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Input group for positioning icons */
+    .input-group {
+      position: relative;
+      margin: 18px 0;
+    }
+
+    .input-group .input-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.3s;
+      pointer-events: none; /* Make icon non-interactive */
+    }
+    
+    /* Modernized input fields */
+    .input-field {
+      width: 100%;
+      box-sizing: border-box; /* Ensures padding doesn't affect width */
+      padding: 14px 20px 14px 50px; /* Left padding for icon */
+      border: 1px solid transparent; /* Added for smoother transition */
+      border-radius: 30px;
+      outline: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .input-field::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Enhanced focus state for inputs */
+    .input-group:focus-within .input-icon {
+        color: #fff;
+    }
+    .input-field:focus {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Style for input errors */
+    .input-error {
+        border-color: #ff7675 !important; /* Red border for errors */
+        box-shadow: 0 0 15px rgba(255, 118, 117, 0.4);
+    }
+
+    /* Password visibility toggle icon */
+    .password-toggle {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    .password-toggle:hover {
+        color: #fff;
+    }
+
+    /* Stylish and high-contrast button */
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: #fff;
+      color: #0072ff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Cleaner links section */
+    .extra-links {
+      margin-top: 25px;
+      font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: text-decoration 0.3s;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .extra-links p {
+        margin: 10px 0;
+    }
+    
+    /* Error message styling */
+    .error-message {
+        color: #ff7675;
+        background: rgba(45, 52, 54, 0.4);
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        display: none; /* Hidden by default */
+        animation: fadeIn 0.5s;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Create Account</h2>
+    <form action="PocketServlet" method="post" id="signupForm" novalidate>
+      <!-- Username input -->
+      <div class="input-group">
+        <i class="fas fa-user input-icon"></i>
+        <input type="text" name="username" class="input-field" placeholder="Username" required>
+      </div>
+       <!-- Email input -->
+      <div class="input-group">
+        <i class="fas fa-envelope input-icon"></i>
+        <input type="email" name="email" class="input-field" placeholder="Email Address" required>
+      </div>
+      <!-- Password input -->
+      <div class="input-group">
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
+        <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+      </div>
+      <!-- Confirm Password input -->
+       <div class="input-group">
+        <i class="fas fa-check-circle input-icon"></i>
+        <input type="password" id="confirm_password" name="confirm_password" class="input-field" placeholder="Confirm Password" required>
+        <i class="fas fa-eye password-toggle" id="toggleConfirmPassword"></i>
+      </div>
+      <!-- Error message container -->
+      <div id="passwordError" class="error-message">
+        <i class="fas fa-exclamation-circle"></i> Passwords do not match. Please try again.
+      </div>
+      <input type="submit" class="btn" name="b" value="Register">
+    </form>
+    <div class="extra-links">
+      <p>Already have an account? <a href="signin.html">Sign In</a></p>
+    </div>
+  </div>
+
+  <script>
+    // --- Password Visibility Toggle ---
+    function setupPasswordToggle(toggleId, passwordId) {
+        const toggle = document.getElementById(toggleId);
+        const passwordInput = document.getElementById(passwordId);
+
+        if (toggle && passwordInput) {
+            toggle.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('fa-eye-slash');
+            });
+        }
+    }
+
+    setupPasswordToggle('togglePassword', 'password');
+    setupPasswordToggle('toggleConfirmPassword', 'confirm_password');
+
+    // --- Form Submission and Real-time Validation ---
+    const form = document.getElementById('signupForm');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm_password');
+    const errorMessage = document.getElementById('passwordError');
+
+    // Function to check if passwords match
+    function validatePasswords() {
+        if (password.value !== confirmPassword.value && confirmPassword.value.length > 0) {
+            errorMessage.style.display = 'block';
+            password.classList.add('input-error');
+            confirmPassword.classList.add('input-error');
+            return false;
+        } else {
+            errorMessage.style.display = 'none';
+            password.classList.remove('input-error');
+            confirmPassword.classList.remove('input-error');
+            return true;
+        }
+    }
+
+    // Real-time validation on input
+    password.addEventListener('input', validatePasswords);
+    confirmPassword.addEventListener('input', validatePasswords);
+
+    // Final validation on form submission
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            if (!validatePasswords()) {
+                // Prevent form from submitting if passwords don't match
+                event.preventDefault(); 
+            }
+        });
+    }
+  </script>
+</body>
+</html>
+

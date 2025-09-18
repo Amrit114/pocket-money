@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PocketMoney - Sign In</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Base styles and background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Glassmorphism container with improved aesthetics */
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 360px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .container h2 {
+      margin-bottom: 25px;
+      font-size: 2rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Input group for positioning icons */
+    .input-group {
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .input-group i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.3s;
+    }
+    
+    /* Modernized input fields */
+    .input-field {
+      width: 100%;
+      box-sizing: border-box; /* Ensures padding doesn't affect width */
+      padding: 14px 20px 14px 50px; /* Left padding for icon */
+      border: none;
+      border-radius: 30px;
+      outline: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .input-field::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Enhanced focus state for inputs */
+    .input-group:focus-within i {
+        color: #fff;
+    }
+    .input-field:focus {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Stylish and high-contrast button */
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: #fff;
+      color: #0072ff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, color 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-3px);
+    }
+
+    /* Cleaner links section */
+    .extra-links {
+      margin-top: 25px;
+      font-size: 0.9rem;
+    }
+
+    .extra-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: text-decoration 0.3s;
+    }
+
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+    
+    .extra-links p {
+        margin: 10px 0;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign In</h2>
+    <form action="PocketServlet" method="post">
+      <!-- Username input with icon -->
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" class="input-field" placeholder="Username" required>
+      </div>
+      <!-- Password input with icon -->
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" class="input-field" placeholder="Password" required>
+      </div>
+      <input type="submit" class="btn" name="b" value="Sign In">
+    </form>
+    <div class="extra-links">
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      <p><a href="#">Forgot Password?</a></p>
+    </div>
+  </div>
+</body>
+</html>
