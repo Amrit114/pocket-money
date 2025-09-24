@@ -22,7 +22,7 @@
 
 [✨ Features](#features) • [🚀 Quick Start](#quick-start) • [📁 Project Structure](#project-structure) • [🛠️ Installation](#installation) • [📱 Usage](#usage)
 
-**Developed by Amrit Kumar**
+**Developed by Amrit Raj Singh**
 
 </div>
 
