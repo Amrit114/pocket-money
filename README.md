@@ -87,8 +87,8 @@
 	// Update DBCon.java with your Oracle database credentials
 	con = DriverManager.getConnection(
 		 "jdbc:oracle:thin:@localhost:1521:xe", 
-		 "your_username", 
-		 "your_password"
+		 "system", 
+		 "system"
 	);
 	```
 
@@ -220,7 +220,7 @@ This project is licensed under the **MIT License** - see the [LICENSE.md](LICENS
 
 **Need Help?** 🤔
 
-📧 **Email**: support@pocketmoney.com  
+📧 **Email**: singhamritraj898@gmail.com  
 🐛 **Issues**: [GitHub Issues](https://github.com/Amrit114/pocket-money/issues)  
 📖 **Documentation**: [Wiki](https://github.com/Amrit114/pocket-money/wiki)
 
